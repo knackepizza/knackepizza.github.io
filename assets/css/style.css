@@ -18,14 +18,25 @@ body {
 }
 h1 {
     font-size: 36px;
+    margin-bottom: 0;
 }
 p {
     line-height: 27px;
 }
+.container {
+    width: 80%;
+    margin: auto;
+}
 .main {
-    margin: 200px;
-    padding-left: 30px;
-    border-left: 4px solid white;
+    padding: 200px 0;
+}
+@media screen and (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+    .main {
+        padding: 20px 0;
+    }
 }
 .mw-500 {
     max-width: 500px;
@@ -45,4 +56,7 @@ p {
 }
 .btn-primary:hover {
     background: rgb(27, 57, 156);
+}
+.text-opaque {
+    opacity: 0.5;
 }
