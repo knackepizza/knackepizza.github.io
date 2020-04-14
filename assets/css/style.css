@@ -23,7 +23,8 @@ h1 {
     margin-bottom: 0;
 }
 p {
-    line-height: 27px;
+    font-size: 18px;
+    line-height: 30px;
 }
 .container {
     width: 80%;
@@ -53,9 +54,15 @@ p {
     background: rgb(39, 81, 221);
     color: white;
     display: inline-block;
+    text-align: center;
     padding: 0.5rem 2rem;
     letter-spacing: 1px;
     border-radius: 5px;
+}
+@media screen and (max-width: 580px) {
+    .btn-primary {
+        display: block;
+    }
 }
 .btn-primary:hover {
     background: rgb(27, 57, 156);
