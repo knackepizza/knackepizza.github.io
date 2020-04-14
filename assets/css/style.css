@@ -13,7 +13,9 @@ a {
 body {
     background-image: url("../img/bg.jpg");
     background-size: cover;
+    background-position: center;
     color: white;
+    height: 100vh;
     font-family: "Haas Regular";
 }
 h1 {
