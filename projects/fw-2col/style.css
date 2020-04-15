@@ -6,12 +6,24 @@ html, body {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
+.col-1 {
+    grid-row: unset;
+}
+.col-2 {
+    grid-row: unset;
+}
 @media screen and (max-width: 768px) {
     .row {
         grid-template-columns: 1fr;
     }
     .col {
         min-height: 300px;
+    }
+    .col-1 {
+        grid-row: 1;
+    }
+    .col-2 {
+        grid-row: 2;
     }
 }
 .bg-1 {
@@ -20,7 +32,10 @@ html, body {
 }
 
 .col {
-    padding: 50px;
+    padding: 100px;
+}
+.col p {
+    line-height: 26px;
 }
 
 .row.inverse .lcol {
