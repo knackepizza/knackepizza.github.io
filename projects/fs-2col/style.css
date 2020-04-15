@@ -1,0 +1,32 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+@media screen and (max-width: 768px) {
+    .row {
+        grid-template-columns: 1fr;
+    }
+    .col {
+        min-height: 300px;
+    }
+}
+.bg-1 {
+    background-image: url("bg-1.png");
+    background-size: cover;
+}
+
+.col {
+    padding: 50px;
+}
+
+.row.inverse .lcol {
+    grid-row: 1;
+}
+
+.col h1 {
+    text-align: center;
+}
