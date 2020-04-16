@@ -6,10 +6,10 @@ html, body {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
-.col-1 {
+.col-left {
     grid-row: unset;
 }
-.col-2 {
+.col-right {
     grid-row: unset;
 }
 @media screen and (max-width: 768px) {
@@ -19,10 +19,10 @@ html, body {
     .col {
         min-height: 300px;
     }
-    .col-1 {
+    .col-left {
         grid-row: 1;
     }
-    .col-2 {
+    .col-right {
         grid-row: 2;
     }
 }
@@ -38,7 +38,7 @@ html, body {
     line-height: 26px;
 }
 
-.row.inverse .lcol {
+.row.inverse .col-left {
     grid-row: 1;
 }
 
