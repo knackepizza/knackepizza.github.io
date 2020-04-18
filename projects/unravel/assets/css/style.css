@@ -21,6 +21,7 @@
 
 a {
     text-decoration: none;
+    color: unset;
 }
 body {
     font-family: "Haas Regular";
@@ -34,11 +35,8 @@ p {
     line-height: 30px;
 }
 .container {
-    width: 30%;
+    width: 40%;
     margin: auto;
-}
-.main {
-    
 }
 .top-nav {
     display: grid;
@@ -135,6 +133,7 @@ p {
     backdrop-filter: blur(15px);
     color: white;
     transition: background 0.15s ease-in-out;
+    font-family: "Haas Medium";
 }
 @media screen and (max-width: 580px) {
     .btn {
@@ -172,8 +171,10 @@ p {
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     color: white;
-  }
-  
+}
+.modal.profile {
+    display: block;
+}  
   /* Modal Content/Box */
   .modal-content {
     background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url("../img/event-1.jpg");
@@ -183,7 +184,7 @@ p {
     padding: 30px;
     margin-top: 50px;
     border-radius: 10px 10px 0 0;
-    width: 30%; /* Could be more or less, depending on screen size */
+    width: 40%; /* Could be more or less, depending on screen size */
   }
   @media screen and (max-width: 768px) {
       .modal-content {
@@ -256,7 +257,7 @@ p {
 }
 .modal .button-row {
     display: grid;
-    grid-template-columns: 15% 85%;
+    grid-template-columns: 25% 75%;
 }
 @media screen and (max-width: 1200px) {
     .modal .button-row {
@@ -265,4 +266,22 @@ p {
 }
 .modal .button-row a:first-of-type {
     margin-right: 15px;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(240, 240, 240);
+    color: gray;
+    padding: 10px 0;
+    text-align: center;
+}
+.footer a:hover {
+    color: rgb(88, 88, 88);
+}
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
