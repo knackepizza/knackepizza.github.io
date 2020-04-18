@@ -35,7 +35,7 @@ p {
     line-height: 30px;
 }
 .container {
-    width: 40%;
+    width: 30%;
     margin: auto;
 }
 .top-nav {
@@ -52,7 +52,7 @@ p {
     padding-top: 15px;
 }
 .event {
-    padding: 15px;
+    padding: 30px 15px;
     border-radius: 10px;
     margin: 10px 0;
 }
@@ -80,7 +80,7 @@ p {
     margin: 0 !important;
     letter-spacing: 1px;
 }
-.event-details {
+.event .event-details {
     font-family: "Haas Light";
     color: white;
     margin: 0;
@@ -123,6 +123,7 @@ p {
 }
 .page-indicator {
     font-size: 24px;
+    color: #070604;
 }
 .btn {
     display: inline-block;
@@ -184,7 +185,7 @@ p {
     padding: 30px;
     margin-top: 50px;
     border-radius: 10px 10px 0 0;
-    width: 40%; /* Could be more or less, depending on screen size */
+    width: 30%; /* Could be more or less, depending on screen size */
   }
   @media screen and (max-width: 768px) {
       .modal-content {
@@ -235,12 +236,34 @@ p {
     margin-top: 50px;
     font-family: "Haas Regular";
 }
-.modal .event-detail {
-    text-align: center;
-    letter-spacing: 1px;
+.modal .event-detail-row {
+    display: grid;
+    grid-column-gap: 15px;
+    grid-template-columns: 10% 90%;
 }
-.modal .event-detail:last-of-type {
+.modal .event-detail-row:last-of-type {
     margin-bottom: 50px;
+}
+.modal .event-detail-icon {
+    margin: auto;
+    border: 2px solid white;
+    min-width: 32px;
+    color: white;
+    text-align: center;
+}
+.modal .event-detail {
+    letter-spacing: 1px;
+    margin: 0;
+}
+.modal .event-details .event-detail:first-of-type {
+    font-family: "Haas Bold";
+    color: white;
+    opacity: 1.0;
+    margin-bottom: -10px;
+    text-transform: uppercase;
+}
+.modal .event-details .event-detail:last-of-type {
+    opacity: 0.6;
 }
 .modal .author-row {
     display: grid;
