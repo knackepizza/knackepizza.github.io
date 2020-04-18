@@ -192,11 +192,16 @@ p {
           width: 95%;
       }
   }
-  @media screen and (max-width: 560px) {
-      .modal-content {
-          width: 80%;
-      }
-  }
+@media screen and (max-width: 560px) {
+    .modal-content {
+        width: 80%;
+    }
+}
+@media screen and (max-width: 560px) {
+    .modal-content {
+        width: 84%;
+    }
+}
   
   /* The Close Button */
   .close {
