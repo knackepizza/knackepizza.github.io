@@ -225,6 +225,7 @@ p {
     text-transform: uppercase;
     margin: 0 !important;
     letter-spacing: 1px;
+    word-break: break-all;
 }
 .modal hr {
     opacity: 0.5;
@@ -259,6 +260,9 @@ p {
 .modal .event-detail {
     letter-spacing: 1px;
     margin: 0;
+}
+.modal-body > .event-detail:last-of-type {
+    margin-bottom: 50px;
 }
 .modal .event-details .event-detail:first-of-type {
     font-family: "Haas Bold";
