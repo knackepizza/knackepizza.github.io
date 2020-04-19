@@ -225,7 +225,6 @@ p {
     text-transform: uppercase;
     margin: 0 !important;
     letter-spacing: 1px;
-    word-break: break-all;
 }
 .modal hr {
     opacity: 0.5;
