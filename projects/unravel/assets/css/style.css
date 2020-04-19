@@ -56,8 +56,14 @@ p {
     border-radius: 10px;
     margin: 10px 0;
 }
-.event:hover p {
+.event:hover {
+    cursor: pointer;
+}
+.event:hover .event-title {
     opacity: 0.75;
+}
+.event:hover .event-details {
+    opacity: 0.35;
 }
 #event-1 {
     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("../img/event-1.jpg");
@@ -87,7 +93,6 @@ p {
     font-size: 15px;
     letter-spacing: 3px;
     opacity: 0.6;
-    backdrop-filter: blur(15px);
 
 }
 .event-host {
