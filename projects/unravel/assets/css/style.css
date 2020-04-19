@@ -158,6 +158,9 @@ p {
 .text-opaque {
     opacity: 0.5;
 }
+.text-center {
+    text-align: center;
+}
 
 /* The Modal (background) */
 .modal {
@@ -194,10 +197,10 @@ p {
   }
 @media screen and (max-width: 560px) {
     .modal-content {
-        width: 80%;
+        width: 84%;
     }
 }
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 320px) {
     .modal-content {
         width: 84%;
     }
