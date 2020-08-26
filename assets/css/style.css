@@ -1,72 +1,457 @@
-@font-face {
+body {
+    margin: 0;
     font-family: "Haas Regular";
-    src: url("../fonts/haas-regular.otf");
-}
-@font-face {
-    font-family: "Haas Black";
-    src: url("../fonts/haas-black.otf");
 }
 
 a {
+    color: unset;
     text-decoration: none;
 }
-body {
-    background-image: url("../img/bg.jpg");
-    background-size: cover;
-    background-position: center;
-    color: white;
-    height: 100vh;
-    font-family: "Haas Regular";
+
+::-webkit-scrollbar {
+width: 10px;
 }
-h1 {
-    font-size: 36px;
-    margin-bottom: 0;
+::-webkit-scrollbar-track {
+background: rgba(230, 230, 230, 1);
 }
-p {
-    font-size: 18px;
-    line-height: 30px;
+::-webkit-scrollbar-thumb {
+background: rgba(200, 200, 200, 0.75);
 }
+::-webkit-scrollbar-thumb:hover {
+background: rgba(180, 180, 180, 1);
+}
+
 .container {
     width: 80%;
-    margin: auto;
+    margin: 0 auto;
+}
+
+.main-title {
+    font-size: 60px;
+    font-family: 'Nanum Myeongjo';
+    font-weight: 800;
+    word-break: break-word;
+    width: 70%;
+}
+.section-link {
+    font-family: 'Nanum Myeongjo';
+    font-size: 45px;
+    font-weight: 800;
+}
+
+section {
+    padding: 100px 0;
+}
+
+.main-section {
+    background-image: url("../img/logo.png");
+    padding: 100px 0;
+    background-position: right;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+a.link {
+    color: black;
+    text-decoration: none;
+    background-color: #00EDBF;
+    padding: 5px 10px;
+}
+a.text.link {
+    background: none;
+    display: block;
+    color: white;
+    padding-left: 0;
+}
+a.text.link.active {
+    opacity: 1;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.grid-three {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+/* Add a black background color to the top navigation */
+.topnav {
+    overflow: hidden;
+    padding: 0 100px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: white;
+    z-index: 999;
+    border-bottom: 1px solid rgb(230, 230, 230);
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 30px 16px;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: black;
+    font-family: "Haas Light";
+    transition: color 0.15s;
+}
+
+p {
+    line-height: 30px;
+}
+
+.topnav .active {
+    border-bottom: 1px solid black;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    color: rgba(0, 0, 0, 0.66);
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+    display: none;
+}
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {
+    .topnav {
+        padding: 0;
+    }
+    .topnav a:not(:first-child) {
+        display: none;
+    }
+    .topnav a.icon {
+        float: right;
+        display: block;
+        padding: 24px 16px;
+    }
+    .topnav .active {
+        border-bottom: none;
+        border-left: 4px solid black;
+        border-right: 4px solid black;
+    }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 600px) {
+    .topnav.responsive a.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: center;
+    }
+    .topnav.responsive a.brand {
+        text-align: left;
+    }
+}
+
+.fullwidth {
+    width: 100% !important;
+}
+
+.img-section-fullwidth {
+    width: 90%;
+}
+
+#trusted-clients {
+    background: rgb(240, 240, 240);
+}
+#trusted-clients p {
+    letter-spacing: 3px;
+}
+.text-center {
+    text-align: center;
+}
+
+.float-right {
+    float: right;
+}
+
+#contact {
+    background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0) 50%), url("../img/portfolio.png");
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+}
+
+.email {
+    font-size: 45px;
+    border: 1px solid black;
+    font-family: 'Nanum Myeongjo';
+    padding: 30px;
+    backdrop-filter: blur(15px);
+    transform: scale(0.9);
+    transition: all 0.15s;
+}
+.email:hover {
+    transform: scale(1);
+    background: white;
+}
+
+hr.small {
+    border-color: transparent;
+    border-bottom: 1px solid black;
+    width: 50px;
+    margin-right: auto;
+    margin-left: 0;
+    padding-top: 10px;
+}
+
+footer {
+    background: black;
+    color: white;
+    padding: 100px 0;
+}
+footer .brand {
+    letter-spacing: 3px;
+}
+footer .text {
+    opacity: 0.6;
+}
+footer .text.icon {
+    margin-right: 10px;
+}
+footer a {
+    transition: opacity 0.15s;
+}
+footer a:hover {
+    opacity: 1;
+}
+
+.card .grid img {
+    transform: scale(0.9);
+    transition: transform 0.15s;
+}
+
+.card .grid:hover img {
+    transform: scale(1);
+}
+
+.banner {
+    padding: 390px 0;
 }
 .main {
-    padding: 200px 0;
+    padding-top: 90px;
+}
+.banner.projects {
+    background: url("../img/1-full.png");
+    background-size: cover;
+    background-position: center;
+}
+.banner.resume {
+    background: url("../img/2-full.png");
+    background-size: cover;
+    background-position: center;
+}
+.banner.about {
+    background: url("../img/3-full.png");
+    background-size: cover;
+    background-position: center;
+}
+.banner.esports {
+    background: url("../img/4-full.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.page-title-card {
+    background: white;
+    color: black;
+    padding: 50px 100px;
+    margin-top: -200px;
+}
+.page-title-card h1 {
+    margin: 0;
+}
+
+p.content {
+    font-size: 25px;
+    font-family: "Haas Light";
+    line-height: 41.5px;
+    padding: 0 100px;
+    letter-spacing: 1px;
+}
+
+div.spacer {
+    padding: 50px;
+}
+
+.desktop-only-inline {
+    display: inline-block;
+}
+
+.mobile-only {
+    display: none;
+}
+
+.logo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 50px 0;
+}
+.logo-grid > div {
+    margin: auto;
+}
+.logo-grid img {
+    width: 100px;
+}
+.logo-grid img.funboy {
+    width: 150px;
+}
+
+ul {
+    list-style-type: square;
+    padding: 0 120px;
+}
+li {
+    font-family: "Haas Light";
+    font-size: 25px;
+    line-height: 41.5px;
+	letter-spacing: 1px;
+}
+
+span.tag {
+    padding: 7px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    line-height: 15px;
+    display: inline-block;
+    margin-bottom: 7px;
+}
+
+#trusted-clients.resume-page {
+    margin-top: 100px;
+}
+
+.tags-list {
+    width: 50%;
+    margin: 0 auto;
+}
+
+#content-header {
+    text-align: center;
+    /* For longer titles, align: left */
+}
+.text-grid-left {
+    width: 90%;
+}
+.break-word {
+    word-wrap: break-word;
+}
+
+@media screen and (min-width: 1700px) {
+    .container {
+        width: 60%;
+    }
+}
+@media screen and (max-width: 900px) {
+    .logo-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .logo-grid > div {
+        padding-bottom: 50px;
+    }
 }
 @media screen and (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 2;
+    }
+    .grid-three {
+        grid-template-columns: 1fr;
+    }
+    footer .grid-three {
+        text-align: center;
+    }
+    footer .grid-three div {
+        margin-bottom: 30px;
+    }
+    .img-section-fullwidth {
+        width: 100%;
+    }
+    .card-image {
+        grid-row-end: 1;
+    }
     .container {
-        width: 95%;
+        width: 90%;
     }
-    .main {
-        padding: 20px 0;
+    .page-title-card {
+        padding: 50px;
     }
-}
-.mw-500 {
-    max-width: 500px;
-}
-.haas-rg {
-    font-family: "Haas Regular";
-}
-.haas-bk {
-    font-family: "Haas Black";
-}
-.btn-primary {
-    background: rgb(39, 81, 221);
-    color: white;
-    display: inline-block;
-    text-align: center;
-    padding: 0.5rem 2rem;
-    letter-spacing: 1px;
-    border-radius: 5px;
-}
-@media screen and (max-width: 580px) {
-    .btn-primary {
+    .desktop-only-inline {
+        display: none;
+    }
+    .mobile-only {
         display: block;
     }
+    p.content {
+        padding: 0 50px;
+    }
+    ul {
+        padding: 0 70px;
+    }
+    .banner {
+        padding: 340px 0;
+    }
+    #content-header {
+        text-align: center;
+    }
+    .text-grid-left {
+        width: 100%;
+    }
 }
-.btn-primary:hover {
-    background: rgb(27, 57, 156);
+
+@media screen and (max-width: 512px) {
+    .section-link, .email, .main-title {
+        font-size: 35px;
+    }
+    p.content {
+        font-size: 22px;
+        padding: 0 20px;
+    }
+    .page-title-card {
+        padding: 30px;
+        margin-top: 0;
+    }
+    .logo-grid {
+        grid-template-columns: 1fr;
+    }
+    .main-title {
+        width: 90%;
+    }
+    ul {
+        padding: 0 35px;
+    }
+    li {
+        font-size: 22px;
+    }
+    .banner {
+        padding: 275px 0;
+    }
 }
-.text-opaque {
-    opacity: 0.5;
+
+@keyframes content_reveal {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body, html {
+    animation: content_reveal 0.8s ease;
 }
