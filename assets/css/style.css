@@ -352,6 +352,58 @@ span.tag {
     word-wrap: break-word;
 }
 
+hr.thin {
+    margin: 100px auto;
+    border-color: transparent;
+    border-top-color: rgba(0, 0, 0, 0.33);
+    max-width: 200px;
+}
+
+.grid.repos {
+    column-gap: 15px;
+}
+
+.repo {
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    transition: border-color 0.15s;
+}
+.repo.java:hover {
+    border-color: #b07219;
+}
+.repo.php:hover {
+    border-color: #4F5D95;
+}
+
+.repo p {
+    padding: 0 !important;
+    margin: 0;
+}
+.repo p.content i {
+    vertical-align: unset;
+}
+
+.repo i {
+    vertical-align: middle;
+}
+
+.text-muted {
+    color: grey;
+}
+
+.repo > .content > i {
+    opacity: 0;
+    transition: 0.15s;
+    transform: translateX(-15px);
+}
+.repo:hover > .content > i {
+    color: grey;
+    opacity: 1;
+    transform: translateX(0);
+}
+
 @media screen and (min-width: 1700px) {
     .container {
         width: 60%;

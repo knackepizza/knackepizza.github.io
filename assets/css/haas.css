@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Haas Light";
-    src: url("/assets/fonts/haas/light.otf");
+    src: url("../fonts/haas/light.otf");
 }
 .haas-light {
     font-family: "Haas Light";
@@ -8,28 +8,28 @@
 }
 @font-face {
     font-family: "Haas Regular";
-    src: url("/assets/fonts/haas/regular.otf");
+    src: url("../fonts/haas/regular.otf");
 }
 .haas-regular {
     font-family: "Haas Regular";
 }
 @font-face {
     font-family: "Haas Bold";
-    src: url("/assets/fonts/haas/bold.otf");
+    src: url("../fonts/haas/bold.otf");
 }
 .haas-bold {
     font-family: "Haas Bold";
 }
 @font-face {
     font-family: "Haas Medium";
-    src: url("/assets/fonts/haas/medium.otf");
+    src: url("../fonts/haas/medium.otf");
 }
 .haas-medium {
     font-family: "Haas Medium";
 }
 @font-face {
     font-family: "Haas Black";
-    src: url("/assets/fonts/haas/black.otf");
+    src: url("../fonts/haas/black.otf");
 }
 .haas-black {
     font-family: "Haas Black";
