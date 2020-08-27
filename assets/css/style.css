@@ -404,6 +404,10 @@ hr.thin {
     transform: translateX(0);
 }
 
+.marble-bg {
+    background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)), url('../img/marble.jpg');
+}
+
 @media screen and (min-width: 1700px) {
     .container {
         width: 60%;
@@ -463,6 +467,9 @@ hr.thin {
     }
     .text-grid-left {
         width: 100%;
+    }
+    .marble-bg {
+        background: linear-gradient(rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1)), url('../img/marble.jpg');
     }
 }
 
