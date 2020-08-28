@@ -56,6 +56,19 @@ a.link {
     text-decoration: none;
     background-color: #00EDBF;
     padding: 5px 10px;
+    transition: 0.15s;
+}
+a.link:hover {
+    background-color: #00bb96;
+}
+a.link.secondary {
+    border: 1px solid black;
+    color: black;
+    background: transparent;
+}
+a.link.secondary:hover {
+    background: black;
+    color: white;
 }
 a.text.link {
     background: none;
@@ -421,9 +434,18 @@ button.btn {
 }
 .btn-primary {
     background: #00EDBF;
+    color: black;
 }
 .btn-primary:hover {
     background: #00bb96;
+}
+.btn-secondary {
+    border: 1px solid grey;
+    background: white;
+    color: grey;
+}
+.btn-secondary:hover {
+    color: white;
 }
 
 #contact-form {
