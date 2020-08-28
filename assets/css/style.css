@@ -428,6 +428,7 @@ button.btn {
     border: none;
     text-align: center;
     margin: auto;
+    font-size: 16px;
 }
 .btn:hover {
     background: rgb(83, 83, 83);
@@ -446,6 +447,12 @@ button.btn {
 }
 .btn-secondary:hover {
     color: white;
+}
+.btn-gold {
+    background: #c2a26a;
+}
+.btn-gold:hover {
+    background: #927a4f;
 }
 
 #contact-form {
@@ -469,6 +476,9 @@ input, #contact-form .email, textarea {
 textarea {
     resize: none;
     height: 170px;
+}
+input:focus, textarea:focus {
+    outline: 2px solid #c2a26a !important;
 }
 #contact-form .email {
     transform: scale(1);
