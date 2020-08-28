@@ -462,6 +462,11 @@ button.btn {
     padding: 150px 0;
     transform: 0.15s;
 }
+input[type=text], input, textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
 input, #contact-form .email, textarea {
     font-size: 30px;
     border: 1px solid black;
