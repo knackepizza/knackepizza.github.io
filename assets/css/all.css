@@ -42,6 +42,12 @@
 .fa-steam:before {
   content: "\f1b6"; }
 
+.fa-star-shooting:before {
+  content: "\f936"; }
+
+.fa-island-tropical:before {
+  content: "\f811"; }
+  
 @font-face {
   font-family: 'Font Awesome 5 Brands';
   font-style: normal;

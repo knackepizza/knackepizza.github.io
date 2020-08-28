@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <meta property="og:image" content="assets/img/logo.png"/>
+
+    <title>Nick</title>
+
+    <link rel="stylesheet" href="assets/css/style.css?v=1.16">
+    <link rel="stylesheet" href="assets/css/all.css?v=1.14">
+    <link rel="stylesheet" href="assets/css/haas.css?v=1.13">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;800&display=swap" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-76060714-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-76060714-1');
+    </script>
+    <meta name="google-site-verification" content="ZYg45FPEfTDm0xD9Hyvsp1Iyi3oq8ooOgQeT86CD8gw" />
+</head>
+<body>
+
+<div class="topnav" id="myTopnav">
+    <a href="/" class="brand"><span class="haas-bold">KPZA</span></a>
+    <a href='projects'>Projects</a>
+    <a href='resume'>Resume</a>
+    <a href='about'>About</a>
+    <a href='services'>Services</a>
+    <a href="javascript:void(0);" class="icon" onclick="navbar()">
+        <i class="fa fa-bars fa-2x"></i>
+    </a>
+</div>
+
+<div class="banner services"></div>
+
+<div class="container">
+    <div class="page-title-card">
+        <p class="haas-light text-center">PLEASE WAIT UP TO 48 HOURS</p>
+        <h1 id="content-header" class="section-link">
+            Thank You!
+        </h1>
+    </div>
+    <p class="content">
+        I'll review your details and contact you back within the next few days. I look forward to talking to you!
+    </p>
+    <div class="bigspacer"></div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="grid-three">
+            <div>
+                <img src="assets/img/logo.png" width="50px">
+                <p class="brand haas-medium">KNÄCKEPIZZA</p>
+                <p class="text">Building a brighter future.</p>
+                <a class="text icon" href="https://github.com/knackepizza/" target="_blank"><i class="fab fa-git-alt fa-2x"></i></a>
+                <a class="text icon" href="https://www.instagram.com/knackepza/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+                <a class="text icon" href="https://steamcommunity.com/id/freshknacke/" target="_blank"><i class="fab fa-steam fa-2x"></i></a>
+            </div>
+            <div>
+                <p>Quick Links</p>
+                <a class="text link" href="projects">Projects</a>
+                <a class="text link" href="resume">Resume</a>
+                <a class="text link" href="about">About</a>
+            </div>
+            <div>
+                <p>Language</p>
+                <a class="text link active" href="/">EN</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="assets/js/navbar.js"></script>
+<script>
+    function showForm(input) {
+        var theForm = document.getElementById('contact-form');
+        var stepText = document.getElementById('step-text');
+        var isShown = false;
+
+        if (isShown == false) {
+            theForm.style.display = 'block';
+            isShown = true;
+        } else {
+            theForm.style.display = 'none';
+            isShown = false;
+        }
+        stepText.innerText = input + " - NEXT STEP";
+    }
+</script>
+</body>
+</html>

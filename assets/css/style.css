@@ -221,10 +221,10 @@ footer a:hover {
     background-size: cover;
     background-position: center;
 }
-.banner.esports {
+.banner.services {
     background: url("../img/4-full.png");
     background-size: cover;
-    background-position: center;
+    background-position: top;
 }
 
 .page-title-card {
@@ -321,13 +321,13 @@ hr.thin {
 
 .grid.repos {
     column-gap: 15px;
+    row-gap: 15px;
 }
 
 .repo {
     border: 1px solid grey;
     border-radius: 5px;
     padding: 15px;
-    margin-bottom: 15px;
     transition: border-color 0.15s;
 }
 .repo.java:hover {
@@ -366,6 +366,97 @@ hr.thin {
 
 .marble-bg {
     background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)), url('../img/marble.jpg');
+}
+
+.grid.pricing {
+    column-gap: 15px;
+    row-gap: 15px;
+}
+
+.pricing-option {
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 50px;
+}
+.pricing-option.primary {
+    border-color: #00EDBF;
+}
+.pricing-option p {
+    padding: 0 !important;
+    margin: 0;
+}
+.pricing-option .title {
+    font-family: 'Nanum Myeongjo';
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 32px;
+}
+.pricing-option ul {
+    padding: 0 30px !important;
+    list-style-type: none;
+}
+.pricing-option li {
+    font-size: 16px;
+}
+.pricing-option i {
+    margin-bottom: 10px;
+}
+
+.btn {
+    border-radius: 5px;
+    background: grey;
+    color: white;
+    font-family: 'Haas Regular';
+    display: block;
+    padding: 15px 100px;
+    transition: 0.15s;
+}
+button.btn {
+    border: none;
+    text-align: center;
+    margin: auto;
+}
+.btn:hover {
+    background: rgb(83, 83, 83);
+}
+.btn-primary {
+    background: #00EDBF;
+}
+.btn-primary:hover {
+    background: #00bb96;
+}
+
+#contact-form {
+    background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 1)), url("../img/portfolio.png");
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    transform: 0.15s;
+}
+input, #contact-form .email, textarea {
+    font-size: 30px;
+    border: 1px solid black;
+    font-family: 'Nanum Myeongjo';
+    padding: 20px;
+    backdrop-filter: blur(15px);
+    transition: all 0.15s;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+textarea {
+    resize: none;
+    height: 170px;
+}
+#contact-form .email {
+    transform: scale(1);
+}
+#contact-form .grid {
+    column-gap: 15px;
+    row-gap: 15px;
+}
+.bigspacer {
+    padding: 75px;
 }
 
 @media screen and (min-width: 1700px) {
@@ -509,4 +600,7 @@ hr.thin {
 
 body, html {
     animation: content_reveal 0.8s ease;
+}
+html {
+    scroll-behavior: smooth;
 }
