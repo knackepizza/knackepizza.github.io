@@ -459,7 +459,7 @@ button.btn {
     background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 1)), url("../img/portfolio.png");
     background-size: cover;
     background-position: center;
-    padding: 100px 0;
+    padding: 150px 0;
     transform: 0.15s;
 }
 input, #contact-form .email, textarea {
@@ -486,6 +486,9 @@ input:focus, textarea:focus {
 #contact-form .grid {
     column-gap: 15px;
     row-gap: 15px;
+}
+#contactform {
+    padding: 50px 0;
 }
 .bigspacer {
     padding: 75px;
