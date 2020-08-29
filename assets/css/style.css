@@ -336,7 +336,7 @@ hr.thin {
 
 .grid.repos {
     column-gap: 15px;
-    row-gap: 15px;
+    margin-bottom: 15px;
 }
 
 .repo {
