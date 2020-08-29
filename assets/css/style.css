@@ -481,7 +481,7 @@ input, #contact-form .email, textarea {
 }
 textarea {
     resize: none;
-    height: 170px;
+    height: 168px;
 }
 input:focus, textarea:focus {
     outline: 2px solid #c2a26a !important;
