@@ -579,8 +579,10 @@ input:focus, textarea:focus {
     }
     .topnav .active {
         border-bottom: none;
-        border-left: 4px solid black;
-        border-right: 4px solid black;
+    }
+    .topnav .active span {
+        border-bottom: 1px solid black;
+        padding: 0 1px 7px 6px;
     }
     .topnav.responsive a.icon {
         position: absolute;
