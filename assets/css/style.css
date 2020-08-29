@@ -55,13 +55,15 @@ a.link {
     color: black;
     text-decoration: none;
     background-color: #00EDBF;
-    border: 1px solid #00EDBF;
     padding: 10px 20px;
     border-radius: 5px;
     transition: 0.15s;
 }
 a.link:hover {
     background-color: #00bb96;
+}
+.main a.link {
+    border: 1px solid #00EDBF;
 }
 a.link.secondary {
     border: 1px solid black;
@@ -337,6 +339,7 @@ hr.thin {
 .grid.repos {
     column-gap: 15px;
     margin-bottom: 15px;
+    row-gap: 15px;
 }
 
 .repo {
