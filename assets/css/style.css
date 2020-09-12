@@ -345,7 +345,7 @@ hr.thin {
 .repo {
     border: 1px solid grey;
     border-radius: 5px;
-    padding: 15px;
+    padding: 30px;
     transition: border-color 0.15s;
 }
 .repo.java:hover {
@@ -358,6 +358,7 @@ hr.thin {
 .repo p {
     padding: 0 !important;
     margin: 0;
+    text-align: center;
 }
 .repo p.content i {
     vertical-align: unset;
@@ -372,13 +373,14 @@ hr.thin {
 }
 
 .repo > .content > i {
-    opacity: 0;
+    display: none;
     transition: 0.15s;
     transform: translateX(-15px);
 }
 .repo:hover > .content > i {
+    display: inline-block;
     color: grey;
-    opacity: 1;
+    animation: content_reveal 0.8s ease;
     transform: translateX(0);
 }
 
