@@ -207,6 +207,7 @@
     $("input").on('keypress',function(e) {
         if(e.which == 13) {
             doSolve();
+            document.activeElement.blur();
         }
     });
 
