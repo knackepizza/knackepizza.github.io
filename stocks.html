@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="assets/img/logo.png"/>
+    
+    <title>KPZA | Stocks</title>
+
+    <link rel="stylesheet" href="http://cdn.zoty.us/css/haas/haas.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <style>
+        body {
+            font-family: "Haas Regular";
+            background: #121212;
+            color: #E5E5E5;
+        }
+        .container {
+            width: 300px;
+            margin: auto;
+            margin-top: 15px;
+            font-size: 17px;
+        }
+        p {
+            margin: 0;
+        }
+        h3.haas-black {
+            letter-spacing: 2px;
+        }
+        h3 {
+            margin-top: 0;
+            font-size: 30px;
+        }
+        .input-section {
+            margin-bottom: 20px;
+        }
+        .input-section label {
+            margin-bottom: -12px;
+            margin-left: 10px;
+            padding: 4px 11px;
+            font-size: 14px;
+            text-transform: uppercase;
+            z-index: 2;
+            position: relative;
+            background: #1E1E1E;
+            border: 1px solid #424242;
+            border-radius: 3px;
+            display: block;
+            width: fit-content;
+        }
+        .input-section .text-muted {
+            margin-top: 5px;
+            font-size: 14px;
+        }
+        input {
+            width: 100%;
+            z-index: 0;
+            font-family: "Haas Regular";
+            font-size: 18px;
+            position: relative;
+            padding: 10px;
+            padding-top: 18px;
+            box-sizing: border-box;
+            border-radius: 3px;
+            border-width: 1px;
+            background: #1E1E1E;
+            border: none;
+            color: #E0E0E0;
+        }
+        input:disabled {
+            color: #424242;
+        }
+        input:focus {
+            outline: none;
+            border: 1px solid #1ee9ba;
+        }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
+        input[type=number] {
+        -moz-appearance: textfield;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .text-muted {
+            color: #909090;
+            font-size: 16px;
+        }
+        button {
+            background: #1E1E1E;
+            display: block;
+            color: #9E9E9E;
+            text-align: center;
+            width: 100%;
+            border: none;
+            font-family: "Haas Regular";
+            text-transform: uppercase;
+            padding: 12px;
+            letter-spacing: 2px;
+            border-radius: 3px;
+            transition: 0.1s ease-in-out;
+        }
+        button:hover {
+            background: #1ee9ba;
+            color: white;
+            border: none;
+        }
+        button:focus {
+            outline-width: 1px;
+        }
+    </style>
+    
+    <div class="container">
+        <p class="haas-medium">SHARES CALCULATOR</p>
+        <p class="text-muted">This tells you the amount of shares you should buy of a stock to achieve the ideal loss.</p>
+        <br><br>
+        <div class="input-section">
+            <label for="entry">Entry Price</label>
+            <input type="number" id="entry" min="1">
+            <p class="text-muted">The price you entered a stock at</p>
+        </div>
+        <div class="input-section">
+            <label for="open">Stop Price</label>
+            <input type="number" id="stop" min="1">
+            <p class="text-muted">The price TRND recommends to stop</p>
+        </div>
+        <div class="input-section">
+            <label for="open">Ideal Loss</label>
+            <input type="number" id="loss" value="250" disabled>
+            <p class="text-muted">The amount you would lose</p>
+        </div>
+
+        <button id="submit">Calculate</button>
+        <br><hr><br>
+        <p class="haas-light text-center text-muted">SHARES TO <span id="type">LONG</span></p>
+        <h3 class="haas-black text-center" id="shares">UNDEFINED</h3>
+    </div>
+
+    <script>
+    function solve(entry, stop, loss) {
+        var x = 0;
+
+        if (entry < 1) {
+            return "Entry < 1";
+        } else if (stop < 1) {
+            return "Stop < 1";
+        }
+        
+        if (entry > stop) {
+            while ((entry - stop) * x <= 250) {
+                x += 0.5;
+            }
+            $("#type").text("LONG");
+            $("#type").css("color", "#1ee9ba");
+            return Math.floor(x);
+        } else if (entry < stop) {
+            while ((stop - entry) * x >= -250) {
+                x -= 0.5;
+            }
+            $("#type").text("SHORT");
+            $("#type").css("color", "#e91e8e");
+            return Math.abs(Math.ceil(x));
+        } else {
+            return "Entry == Stop";
+        }
+    }
+
+    function doSolve() {
+        $("#shares").text(solve($("#entry").val(), $("#stop").val(), $("#loss").val()));
+    }
+
+    $("#submit").click(function() {
+        doSolve();
+    });
+
+    $("input").on('keypress',function(e) {
+        if(e.which == 13) {
+            doSolve();
+        }
+    });
+    </script>
+</body>
+</html>
