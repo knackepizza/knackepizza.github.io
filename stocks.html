@@ -17,6 +17,7 @@
         body {
             font-family: "Haas Regular";
             background: #121212;
+            background-image: url("assets/img/toppo.png");
             color: #E5E5E5;
         }
         .container {
@@ -171,7 +172,10 @@
         </div>
         <div class="input-section">
             <label for="open">Ideal Loss</label>
-            <input type="number" id="loss" value="250" disabled>
+            <div class="input-grid">
+                <input type="number" id="loss" value="250">
+                <button class="secondary" id="loss-clear" tabindex="-1"><i class="far fa-times-circle"></i></button>
+            </div>
             <p class="text-muted">The amount you would lose</p>
         </div>
 
@@ -180,7 +184,7 @@
         <div class="grid">
             <div>
                 <p class="haas-light text-muted">SHARES TO <span id="type">LONG</span></p>
-                <h3 class="haas-black" id="shares">UNDEFINED</h3>
+                <h3 class="haas-black" id="shares">???</h3>
             </div>
             <div class="text-right">
                 <p class="haas-light text-muted">COST</p>
@@ -200,8 +204,8 @@
         }
         
         if (entry > stop) {
-            while ((entry - stop) * x <= 250) {
-                x += 0.5;
+            while ((entry - stop) * x <= loss) {
+                x += 1;
             }
 
             x = Math.floor(x);
@@ -211,8 +215,8 @@
             $("#cost").text(readable(Math.floor(x * entry)));
             return x;
         } else if (entry < stop) {
-            while ((stop - entry) * x >= -250) {
-                x -= 0.5;
+            while ((stop - entry) * x >= -loss) {
+                x -= 1;
             }
 
             x = Math.abs(Math.ceil(x));
@@ -222,7 +226,7 @@
             $("#cost").text(readable(Math.floor(x * entry)));
             return x;
         } else {
-            return "Entry == Stop";
+            return "--";
         }
     }
 
@@ -246,6 +250,9 @@
     });
     $("#stop-clear").click(function() {
         $("#stop").val("");
+    });
+    $("#loss-clear").click(function() {
+        $("#loss").val("");
     });
 
     function readable(x) {
