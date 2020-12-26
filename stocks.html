@@ -9,6 +9,7 @@
     <title>KPZA | Stocks</title>
 
     <link rel="stylesheet" href="assets/css/haas.css?v=1.13">
+    <link rel="stylesheet" href="assets/css/all.css?v=1.14">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -64,7 +65,7 @@
             padding: 10px;
             padding-top: 18px;
             box-sizing: border-box;
-            border-radius: 3px;
+            border-radius: 3px 0 0 3px;
             border-width: 1px;
             background: #1E1E1E;
             border: none;
@@ -86,6 +87,10 @@
         }
         input[type=number] {
         -moz-appearance: textfield;
+        }
+        .input-grid {
+            display: grid;
+            grid-template-columns: 5fr 1fr;
         }
         .text-center {
             text-align: center;
@@ -114,7 +119,19 @@
             border: none;
         }
         button:focus {
-            outline-width: 1px;
+            outline: none;
+            color: white;
+            background: #24b190;
+        }
+        button.secondary {
+            border-radius: 0 3px 3px 0;
+        }
+        button.secondary:hover {
+            background: #4B4B4B;
+        }
+        button.secondary:focus {
+            outline: none;
+            background: grey;
         }
     </style>
     
@@ -124,12 +141,18 @@
         <br><br>
         <div class="input-section">
             <label for="entry">Entry Price</label>
-            <input type="number" id="entry" min="1">
+            <div class="input-grid">
+                <input type="number" id="entry" min="1">
+                <button class="secondary" id="entry-clear"><i class="far fa-times-circle"></i></button>
+            </div>
             <p class="text-muted">The price you entered a stock at</p>
         </div>
         <div class="input-section">
             <label for="open">Stop Price</label>
-            <input type="number" id="stop" min="1">
+            <div class="input-grid">
+                <input type="number" id="stop" min="1">
+                <button class="secondary" id="stop-clear"><i class="far fa-times-circle"></i></button>
+            </div>
             <p class="text-muted">The price TRND recommends to stop</p>
         </div>
         <div class="input-section">
@@ -186,6 +209,13 @@
             doSolve();
         }
     });
+
+    $("#entry-clear").click(function() {
+        $("#entry").val("");
+    });
+    $("#stop-clear").click(function() {
+        $("#stop").val("");
+    })
     </script>
 </body>
 </html>
