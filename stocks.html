@@ -26,7 +26,7 @@
             margin-top: 15px;
             font-size: 17px;
         }
-        p {
+        h1, p {
             margin: 0;
         }
         h3.haas-black {
@@ -73,7 +73,7 @@
             border-radius: 3px 0 0 3px;
             border-width: 1px;
             background: #1E1E1E;
-            border: none;
+            border: 1px solid #1E1E1E;
             color: #E0E0E0;
         }
         input:disabled {
@@ -151,8 +151,7 @@
     </style>
     
     <div class="container">
-        <p class="haas-medium">SHARES CALCULATOR</p>
-        <p class="text-muted">This tells you the amount of shares you should buy of a stock to achieve the ideal loss.</p>
+        <h1 class="haas-black">SHARES CALCULATOR</h1>
         <br><br>
         <div class="input-section">
             <label for="entry">Entry Price</label>
@@ -163,7 +162,7 @@
             <p class="text-muted">The price you entered a stock at</p>
         </div>
         <div class="input-section">
-            <label for="open">Stop Price</label>
+            <label for="stop">Stop Price</label>
             <div class="input-grid">
                 <input type="number" id="stop" min="1">
                 <button class="secondary" id="stop-clear" tabindex="-1"><i class="far fa-times-circle"></i></button>
@@ -171,12 +170,20 @@
             <p class="text-muted">The price TRND recommends to stop</p>
         </div>
         <div class="input-section">
-            <label for="open">Ideal Loss</label>
+            <label for="loss">Ideal Loss</label>
             <div class="input-grid">
                 <input type="number" id="loss" value="250">
                 <button class="secondary" id="loss-clear" tabindex="-1"><i class="far fa-times-circle"></i></button>
             </div>
             <p class="text-muted">The amount you would lose</p>
+        </div>
+        <div class="input-section">
+            <label for="max-cost">Max Cost</label>
+            <div class="input-grid">
+                <input type="number" id="max-cost" value="0" min="0">
+                <button class="secondary" id="max-cost-clear" tabindex="-1"><i class="far fa-times-circle"></i></button>
+            </div>
+            <p class="text-muted">The amount spent on the trade. 0 for infinite.</p>
         </div>
 
         <button id="submit">Calculate</button>
@@ -194,7 +201,7 @@
     </div>
 
     <script>
-    function solve(entry, stop, loss) {
+    function solve(entry, stop, loss, cash) {
         var x = 0;
 
         if (entry < 1) {
@@ -206,24 +213,39 @@
         if (entry > stop) {
             while ((entry - stop) * x <= loss) {
                 x += 1;
+                if (cash > 0 && (x * entry) >= cash) {
+                    x -= 1;
+                    $("#cost").text(readable(Math.floor(Math.floor(x) * entry)));
+                    break;
+                }
             }
 
             x = Math.floor(x);
             
             $("#type").text("LONG");
             $("#type").css("color", "#1ee9ba");
-            $("#cost").text(readable(Math.floor(x * entry)));
+            if (cash <= 0) {
+                $("#cost").text(readable(Math.floor(x * entry)));
+            }
             return x;
         } else if (entry < stop) {
             while ((stop - entry) * x >= -loss) {
                 x -= 1;
+                if (cash > 0 && (x * entry) <= -cash) {
+                    x += 1;
+                    $("#cost").text(readable(Math.floor(Math.abs(Math.ceil(x)) * entry)));
+                    break;
+                }
             }
 
             x = Math.abs(Math.ceil(x));
 
             $("#type").text("SHORT");
             $("#type").css("color", "#e91e8e");
-            $("#cost").text(readable(Math.floor(x * entry)));
+
+            if (cash <= 0) {
+                $("#cost").text(readable(Math.floor(x * entry)));
+            }
             return x;
         } else {
             return "--";
@@ -231,7 +253,7 @@
     }
 
     function doSolve() {
-        $("#shares").text(solve($("#entry").val(), $("#stop").val(), $("#loss").val()));
+        $("#shares").text(solve($("#entry").val(), $("#stop").val(), $("#loss").val(), $("#max-cost").val()));
     }
 
     $("#submit").click(function() {
@@ -253,6 +275,9 @@
     });
     $("#loss-clear").click(function() {
         $("#loss").val("");
+    });
+    $("#max-cost-clear").click(function() {
+        $("#max-cost").val("");
     });
 
     function readable(x) {
