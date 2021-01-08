@@ -641,6 +641,12 @@ input:focus, textarea:focus {
     }
 }
 
+@media screen and (max-width: 400px) {
+    .pricing-option {
+        padding: 30px;
+    }
+}
+
 @keyframes content_reveal {
     from {
         opacity: 0;
